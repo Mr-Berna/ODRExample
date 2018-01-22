@@ -96,6 +96,7 @@
 			attributes = {
 				KnownAssetTags = (
 					First,
+					Update,
 				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;

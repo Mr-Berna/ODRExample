@@ -92,7 +92,8 @@ class ViewController: UIViewController {
 	}
 
 	@objc func loadSecondImage(sender: UIButton) {
-		self.showError(message: "No second image")
+		self.showError(message: "")
+		odrManager.load(tag: "Update")
 	}
 
 }
@@ -109,6 +110,14 @@ extension ViewController: ODRManagerDelegate {
 						self.showError(message: "Could not load first image")
 					}
 				}
+				if tag == "Update" {
+					if let image = UIImage(named: "CostValue01Background-1") {
+						self.secondImageView.image = image
+					} else {
+						self.showError(message: "Could not load second image")
+					}
+				}
+
 			}
 		} else {
 			showError(message: "Could not load tag: \(tag)")
