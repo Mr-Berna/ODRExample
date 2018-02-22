@@ -96,6 +96,7 @@
 			attributes = {
 				KnownAssetTags = (
 					First,
+					Initial,
 					Update,
 				);
 				LastSwiftUpdateCheck = 0920;
@@ -304,6 +305,7 @@
 				DEVELOPMENT_TEAM = M4JYU7D945;
 				INFOPLIST_FILE = ODRExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = Initial;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bathwraps.ihp.ODRExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "bcd48118-261b-4dcc-9531-618f768dcc7d";
@@ -322,6 +324,7 @@
 				DEVELOPMENT_TEAM = M4JYU7D945;
 				INFOPLIST_FILE = ODRExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = Initial;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bathwraps.ihp.ODRExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9d00b636-1d1a-4768-bb13-9829dcf57611";
