@@ -35,6 +35,12 @@ class ViewController: UIViewController {
 		secondImageView.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 		secondImageView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
 
+		view.addSubview(robotImageView)
+		robotImageView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+		robotImageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+		robotImageView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
+		robotImageView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+
 		view.addSubview(loadSecondImageButton)
 		loadSecondImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 		loadSecondImageButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
@@ -43,6 +49,7 @@ class ViewController: UIViewController {
 
 	override func viewDidAppear(_ animated: Bool) {
 		odrManager.load(tag: "First")
+		odrManager.load(tag: "Initial")
 	}
 
 	// Views
@@ -62,6 +69,13 @@ class ViewController: UIViewController {
 
 	lazy var secondImageView: UIImageView = {
 		return makeImageView()
+	}()
+
+	lazy var robotImageView: UIImageView = {
+		let riv = makeImageView()
+		riv.contentMode = .scaleAspectFit
+		riv.backgroundColor = UIColor.clear
+		return riv
 	}()
 
 	lazy var errorLabel: UILabel = {
@@ -107,6 +121,13 @@ extension ViewController: ODRManagerDelegate {
 						self.imageView.image = image
 					} else {
 						self.showError(message: "Could not load first image")
+					}
+				}
+				if tag == "Initial" {
+					if let image = UIImage(named: "Eric-Icon") {
+						self.robotImageView.image = image
+					} else {
+						self.showError(message: "Could not load robot.")
 					}
 				}
 			}
